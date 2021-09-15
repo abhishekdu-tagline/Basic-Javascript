@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+
+<body>
+     <!-- <p id="pid">setTimeout excute a function that will be called when the timeout expires.</p> --> <!-- Example 1 Html-->
+     <button onclick="delayedMessage();">Show an message after three seconds</button>   <!-- Example 2 Html-->
+     <button onclick="clearMessage();">Cancel message before it happens</button>
+
+     <div id="output"></div>
+</body>
+<script type="text/javascript">
+  let timeoutID 
+   function setOutput(showText) {
+        document.querySelector('#output').innerHTML = showText;
+   }
+     function delayedMessage() {
+        timeoutID =   setTimeout(setOutput , 3000 , "Wow This is a test!" ); 
+     }
+
+     function clearMessage(){
+          clearTimeout(timeoutID);
+          console.log("The event is cancel");
+     }
+  /// Basic Example of setTimeout function
+     // let pid = document.getElementById('pid');
+     // function userDetail(name, sirName) {
+     //      pid.innerHTML = `the userFullName is ${name} ${sirName}`;
+     // }
+     // let timeOutID = setTimeout(userDetail, 4000, "Abhishek", "Dubey")
+
+     // console.log(`the time out is ${timeOutID}`);
+
+     ///
+</script>
+
+</html>

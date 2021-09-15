@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="printNumber(5, 10);">Start Timer</button>
+    <p id="demo"> Print Numbers :-</p>
+
+</body>
+<script type="text/javascript">
+
+    let pid = document.getElementById("demo");
+    const printNumber = (from, to) => {
+        let current = from;
+        debugger;
+        let timerId = setInterval(() => {
+            if (current == to) {
+                clearInterval(timerId);
+            }
+            pid.innerHTML = current++;
+        }, 2000)
+    }
+
+</script>
+
+</html>

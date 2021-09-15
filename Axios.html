@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="submit" type="button" onclick="getData()"> Get Request</button>
+</body><br />
+<span id="span_id"></span>
+</body>
+
+</html>
+<script>
+    //    const getData = () =>{
+    //        axios.get("http://jsonplaceholder.typicode.com/posts")
+    //        .then((res)=>{
+    //            console.log("Respons is :-" , res.data);
+    //        })
+    //        .catch((err)=>{
+    //            console.log("Error is :-" , err);
+    //        })
+    //    }
+    // // Axios APi Calling
+
+
+    /// Get Method call using Async / await 
+
+    const getData = async () => {
+        try {
+            let res = await axios.get("http://jsonplaceholder.typicode.com/posts")
+            console.log(res.data);
+            let showData = document.getElementById("span_id")
+            const fetchData = res.data.map((item) => {
+                return showData.innerHTML += `
+                   <div> ID: ${item.id}</div>
+                   <div> Title is: ${item.title}</div>
+                   <div> Body is: ${item.body}</div>
+                   <hr>
+                  `
+            })
+            console.log("Fetching data...", fetchData);
+
+        }
+        catch (err) {
+            console.log("Error is :-", err);
+        }
+
+    }
+</script>

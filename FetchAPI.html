@@ -1,0 +1,76 @@
+<script>
+  //  let promiseData = fetch("https://jsonplaceholder.typicode.com/todos")
+  //  .then((res)=>{
+  //       console.log("Response is :-" , res);
+  //       let convertJSObject = res.json();
+  //       return convertJSObject;
+  //     //   console.log("Data converted" , convertJSObject);
+  //  })
+  //  .then((data)=>{
+  //      console.log("actual Data is" , data);
+  //  })
+
+  //  console.log("The Promise is" , promiseData);
+
+  // Fetch API Method call async / await
+
+  // const fetchToDos = async () => {
+  //     let response = await fetch("https://jsonplaceholder.typicode.com/todos");
+
+  //     if (response.status === 200) {
+  //         console.log("Response is coming");
+  //     }
+  //     let convertJsonData = await response.json();
+  //     console.log("Convert Data: ", convertJsonData);
+
+  //     //   let fetchToDos = convertJsonData.map((todo , index) => {
+  //     //        return   console.log(todo.title);
+  //     //   })
+
+  // }
+
+  // fetchToDos();
+
+  /// Make POST request
+
+//   const data = {
+//     userId: 11,
+//     id: 101,
+//     title: "How To Make API Calls",
+//     body: "How to make API Calls using Fetch API calls",
+//   };
+
+//   fetch("https://jsonplaceholder.typicode.com/posts", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(data),
+//   }).then((res) => {
+//     console.log("Response is: " + res);
+//     let convertData = res.json();
+//     return convertData;
+//   }).then((data) => {
+//       console.log("Success Data" , data);
+//   }).catch((error) => {
+//       console.log("Error: " + error);
+//   });
+
+  /// Make PUT request using fetch request method
+
+  const returnPromise = fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      method : "PUT" ,
+      body : JSON.stringify({
+          id : 1 ,
+          title : "Abhishek Dubey",
+          body : "API calling",
+          userId: 1,
+      }),
+      headers :{
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+  })
+
+  returnPromise.then((res)=>{
+      console.log("Response is: " + res);
+    //   res.json()
+  })
+</script>
